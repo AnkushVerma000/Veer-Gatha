@@ -10,7 +10,7 @@ import axios from "axios";
 import { React, useState } from "react";
 
 const api =
-    "https://c9e5-2409-40d7-1030-6a4f-99e2-6cbc-d6ad-7a00.ngrok-free.app/auth";
+    "https://f197-2409-40d7-1030-6a4f-99e2-6cbc-d6ad-7a00.ngrok-free.app/auth/";
 
 const Signup = () => {
     const [formData, setFormData] = useState({});
@@ -18,6 +18,7 @@ const Signup = () => {
         e.preventDefault();
 
         try {
+            console.log(formData);
             const response = await axios.post(api+"register/viewer/", formData);
 
             console.log("Response:", response.data);
@@ -32,7 +33,7 @@ const Signup = () => {
             <Card
                 color="transparent"
                 shadow={false}
-                className="relative z-10 p-8  ml-6 w-80 max-w-screen-lg sm:w-96"
+                className="relative z-10 p-8 mt-[3rem]  ml-6 w-80 max-w-screen-lg sm:w-96"
             >
                 <Typography variant="h1" color="white">
                     Sign Up
@@ -62,7 +63,7 @@ const Signup = () => {
                                 onChange={(e) =>
                                     setFormData({
                                         ...formData,
-                                        contact: e.target.value,
+                                        number: e.target.value,
                                     })
                                 }
                             />
@@ -103,6 +104,12 @@ const Signup = () => {
                                 size="lg"
                                 label="Confirm Password"
                                 color="white"
+                                onChange={(e) => {
+                                    setFormData({
+                                        ...formData,
+                                        password2: e.target.value,
+                                    });
+                                }}
                             />
                         </div>
                         <Typography color="white">Login as</Typography>
@@ -127,12 +134,12 @@ const Signup = () => {
                             variant="standard"
                             label="Aadhar Number "
                             color="white"
-                            onChange={(e) =>
-                                setFormData({
-                                    ...formData,
-                                    aadhar: e.target.value,
-                                })
-                            }
+                            // onChange={(e) =>
+                            //     setFormData({
+                            //         ...formData,
+                            //         aadhar: e.target.value,
+                            //     })
+                            // }
                         />
                     </div>
                     <Checkbox
@@ -162,6 +169,9 @@ const Signup = () => {
                         Register
                     </Button>
                 </form>
+                <div className="flex justify-center text-gray-400">
+                    Already a user-<span className="hover:text-white hover:font-extrabold"> <a href="/login"> Login</a></span>
+                </div>
             </Card>
         </div>
     );

@@ -21,4 +21,11 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.sw
+
+#some additonal files -->
+.eslintrc.cjs
+package-lock.json
+postcss.config.js
+vite.config.js
+

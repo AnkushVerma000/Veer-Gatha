@@ -6,7 +6,7 @@ import {
     Typography,
 } from "@material-tailwind/react";
 
-const LoginPg = () => {
+const Login = () => {
     return (
         <div
             className="relative h-screen flex justify-center items-center bg-cover"
@@ -15,9 +15,9 @@ const LoginPg = () => {
             <Card
                 color="transparent"
                 shadow={false}
-                className="relative z-10 p-8 w-80 max-w-screen-lg sm:w-96"
+                className="relative z-10 w-80 max-w-screen-lg sm:w-96"
             >
-                <Typography variant="h2" color="white">
+                <Typography variant="h1" color="white">
                     Login
                 </Typography>
                 <Typography
@@ -64,4 +64,4 @@ const LoginPg = () => {
     );
 };
 
-export default LoginPg;
+export default Login;

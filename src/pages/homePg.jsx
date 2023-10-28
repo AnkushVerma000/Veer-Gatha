@@ -1,8 +1,8 @@
 import React from "react";
 import bg from "../assets/imgs/homepgBg.png";
 import { Button } from "@material-tailwind/react";
-import NavbarSimple from "./navBar";
-import HomeCard from "./HomeCards";
+import NavbarSimple from "../components/navBar";
+import HomeCard from "../components/StoryPg/HomeCards";
 
 const HomePg = () => {
     return (
